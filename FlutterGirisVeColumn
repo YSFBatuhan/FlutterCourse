@@ -1,0 +1,85 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          backgroundColor: Color.fromARGB(255, 249, 249, 249),
+          appBar: AppBar(
+            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+            leading: Icon(Icons.airline_seat_individual_suite_sharp),
+            title: Text("App"),
+            centerTitle: true,
+          ),
+          body: //Center(child: Image.asset('images/karapapak.jpg')),
+              SafeArea(
+                  child: Column(
+            //mainAxisAlignment: MainAxisAlignment.end, //sona hizalar
+            crossAxisAlignment:
+                CrossAxisAlignment.stretch, //container tüm satırı kaplar
+            children: [
+              Container(
+                //container olabildiğince büyük olmaya çalışır
+                /*bu Columnu sağa yaslamak için hayalet değersiz bir 
+                container daha oluşturup genişliğimi double infinity yaparak halledebiliriz*/
+                decoration: BoxDecoration(
+                    shape: BoxShape
+                        .rectangle, //height width ile biz düzeltebiliriz.
+                    borderRadius: BorderRadiusDirectional.circular(26.0),
+                    color: Colors.white),
+                //margin: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(30.0),
+                width: 200,
+                height: 75,
+
+                child: Center(child: Text("selamlar")),
+                //color: Colors.black45,
+              ),
+              SizedBox(
+                height: 10,
+              ), //boş bir box oluşturur.Arada mesafe istersek kullanabiliriz
+
+              Container(
+                //container olabildiğince büyük olmaya çalışır
+                decoration: BoxDecoration(
+                    shape: BoxShape
+                        .rectangle, //height width ile biz düzeltebiliriz.
+                    borderRadius: BorderRadiusDirectional.circular(26.0),
+                    color: Colors.blueAccent[100]),
+                //margin: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(30.0),
+                width: 200,
+                height: 75,
+                child: Center(child: Text("ben")),
+                //color: Colors.black45,
+              ),
+              SizedBox(
+                height: 10,
+              ), //boş bir box oluşturur.Arada mesafe istersek kullanabiliriz
+              Container(
+                //container olabildiğince büyük olmaya çalışır
+                decoration: BoxDecoration(
+                  shape:
+                      BoxShape.rectangle, //height width ile biz düzeltebiliriz.
+                  borderRadius: BorderRadiusDirectional.circular(26.0),
+                  color: Colors.pink[300],
+                ),
+                //margin: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(30.0),
+                width: 200,
+                height: 75,
+                child: Center(child: Text("batuhan")),
+                //color: Colors.black45,
+              ),
+            ], //Row ise Columnun yatay versiyonudur
+          ))),
+    );
+  }
+}
